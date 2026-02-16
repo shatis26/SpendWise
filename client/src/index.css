@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/*
+ * Custom design tokens and base styles for SpendWise.
+ * Tailwind v4 uses CSS-first configuration — no tailwind.config.js needed.
+ */
+
+@theme {
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-primary-light: #e0e7ff;
+  --color-surface: #1e1b4b;
+  --color-surface-light: #312e81;
+  --color-danger: #ef4444;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --font-family-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  @apply bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-gray-100 min-h-screen;
+  font-family: var(--font-family-sans);
+}
