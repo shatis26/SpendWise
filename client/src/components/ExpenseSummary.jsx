@@ -10,7 +10,7 @@ export default function ExpenseSummary({ total, count }) {
             <div>
                 <p className="text-sm text-indigo-300 font-medium">Total Expenses</p>
                 <p className="text-3xl font-bold text-white mt-1">
-                    ${total.toFixed(2)}
+                    ₹{total.toFixed(2)}
                 </p>
             </div>
             <div className="text-right">

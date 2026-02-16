@@ -127,7 +127,7 @@ export default function ExpenseList({ expenses, loading }) {
                                     {expense.description}
                                 </td>
                                 <td className="px-4 py-3 text-sm font-semibold text-emerald-400 text-right whitespace-nowrap">
-                                    ${(expense.amount / 100).toFixed(2)}
+                                    ₹{(expense.amount / 100).toFixed(2)}
                                 </td>
                             </tr>
                         ))}

@@ -63,7 +63,7 @@ export default function ExpenseForm({ categories, onSubmit, submitting }) {
                         htmlFor="amount"
                         className="block text-sm font-medium text-gray-400 mb-1"
                     >
-                        Amount ($)
+                        Amount (Rs.)
                     </label>
                     <input
                         id="amount"
