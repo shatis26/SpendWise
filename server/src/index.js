@@ -11,7 +11,26 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // ── Middleware ──────────────────────────────────────────────────────────
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173" }));
+// Dynamic CORS: Vercel generates unique preview URLs per deployment,
+// so we allow any *.vercel.app origin plus the production CLIENT_URL.
+const allowedOrigins = [
+    process.env.CLIENT_URL,
+    "http://localhost:5173",
+].filter(Boolean);
+
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            // Allow requests with no origin (e.g., curl, Postman)
+            if (!origin) return callback(null, true);
+            // Allow any Vercel preview/production URL
+            if (origin.endsWith(".vercel.app")) return callback(null, true);
+            // Allow explicitly listed origins
+            if (allowedOrigins.includes(origin)) return callback(null, true);
+            callback(new Error("Not allowed by CORS"));
+        },
+    })
+);
 app.use(express.json());
 
 // ── Routes ─────────────────────────────────────────────────────────────
