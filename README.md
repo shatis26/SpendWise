@@ -111,7 +111,3 @@ Uses Tailwind's new CSS-first configuration (no `tailwind.config.js`). Custom de
 | Variable       | Default                     | Description      |
 | -------------- | --------------------------- | ---------------- |
 | VITE_API_URL   | http://localhost:5000/api   | Backend API URL  |
-
-## License
-
-ISC
